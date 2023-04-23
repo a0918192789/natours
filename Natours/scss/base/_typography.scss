@@ -1,0 +1,90 @@
+body{
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    font-size: 1.6rem;
+    line-height: 1.7;
+    color: $color-greay-dark;
+    
+    // overflow:hidden;    /* 自動隱藏超出的文字或圖片 */
+}
+
+.header-title{
+    color: $color-whit;
+    text-transform: uppercase;
+    margin-bottom: 4rem;
+
+    &1{
+        display: block;
+        font-size: 6rem;
+        font-weight: 400;
+        letter-spacing: 3.5rem;
+        animation-name: move;
+        animation-duration: 1s; /* 動畫持續時間 */
+        animation-timing-function: ease-out;    /* 緩慢的結束 */
+
+        @include respond(phone){
+            letter-spacing: 1rem;
+            font-family: 5rem;
+        }
+    }
+    
+    &2{
+        display: block;
+        font-size: 2rem;
+        font-weight: 700;
+        letter-spacing: 1.75rem;
+        animation-name: right;
+        animation: right 1s ease-out;   /* 在一秒的持續時間內, 與緩出函數配合使用 */
+
+        @include respond(phone){
+            letter-spacing: 0.5rem;
+            
+        }
+    }
+}
+
+.heading-secondary{
+    font-size: 3.5rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    display: inline-block;
+    background-image: linear-gradient(to right bottom, rgb($color-primry-purple, 0.803), rgb($color-primry-green, 0.803));
+
+    //將區塊内的文字作為裁剪範圍向外裁剪，文字的背景就是區塊的背景，文字之外的區域都會被裁剪掉。
+    //需要搭配color:transparent使用。
+    -webkit-background-clip: text;  //只打此行會顯示相容性錯誤，
+    background-clip: text;      //解決方法在打一行。
+    color: transparent;     //透明
+    letter-spacing: 2px;
+    transition: all 0.2s;
+
+    @include respond (tab-port){
+        font-size: 3rem;
+    }
+
+    @include respond(phone){
+        font-size: 2.3rem;
+    }
+
+    &:hover{
+        transform: skewX(15deg) skewY(2deg) scale(1.1);     //skew傾斜
+        text-shadow: 0.5rem 1rem 2rem rgb($color-black, 0.3);
+    }
+}
+
+.heading-tertiary{
+    font-size: $default-font-size;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin: 0 -10px;
+}
+
+.paragraph{
+    font-size: $default-font-size;
+    text-indent: 2rem;  //縮排
+    text-align: justify;
+    &:not(:last-child){
+        margin-bottom: 3rem;
+    }
+}

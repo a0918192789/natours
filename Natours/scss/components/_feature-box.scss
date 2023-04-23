@@ -1,0 +1,41 @@
+.feature-box{
+    background-color: rgb($color-whit, 0.7);
+    font-size: 1.5rem;
+    padding: 2.5rem;
+    text-align: center;
+    border-radius: 3px;
+    box-shadow: 0 1.5rem 4rem rgb($color-black, 0.15);
+    letter-spacing: 2px;
+    transition: transform  0.5s;
+    height: 28rem;
+    
+    @include respond (tab-port){
+        padding: 2rem;
+    }
+
+    &_icon{
+        font-size: 6rem;
+        margin-bottom: 0.5rem;
+
+        display: inline-block;
+        background-image: linear-gradient(to right bottom, rgb($color-primry-purple, 0.803), rgb($color-primry-green, 0.803));
+
+        //將區塊内的文字作為裁剪範圍向外裁剪，文字的背景就是區塊的背景，文字之外的區域都會被裁剪掉。
+        //需要搭配color:transparent使用。
+        -webkit-background-clip: text;  //只打此行會顯示相容性錯誤，
+        background-clip: text;      //解決方法在打一行。
+        color: transparent;     //透明
+
+        @include respond (tab-port){
+            margin-bottom: 0;
+        }
+    }
+
+    &:hover{
+        transform: translateY(-1.5rem) scale(1.03);
+    }
+
+    &_text{
+        margin-top: 15px;
+    }
+}

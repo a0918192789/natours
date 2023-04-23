@@ -1,0 +1,203 @@
+.card{
+    //只需要設定在父元素，就能獲得簡單的透視效果
+    //perspective的值可以想像成物件距離螢幕的距離，如果值越大代表越遠，數值越小代表離螢幕越近。
+    perspective: 150rem;    
+    position: relative;
+    height: 52rem;
+    //outline: 1px solid red;
+    
+    &_side{
+        height: 52rem;
+        transition: all 1s ease;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        backface-visibility: hidden;
+        border-radius: 3px;
+        overflow: hidden;   //控制對太大而區域無法容納的內容的處理方式
+        box-shadow: 0 1.5rem 4rem rgb($color-black, 0.15);
+
+        &-front{
+            background-color: $color-whit;
+        }
+    
+        &-back{
+            transform: rotateY(180deg);
+
+            &-1{
+                background-image: linear-gradient(to right bottom, 
+                $color-secondary-light, $color-secondary-dark);
+            }
+
+            &-2{
+                background-image: linear-gradient(to right bottom, 
+                $color-primry-green, $color-primry);
+            }
+
+            &-3{
+                background-image: linear-gradient(to right bottom, 
+                $color-tertiary-light, $color-tertiary-dark);
+            }
+        }
+    }
+    
+    
+    //FRONT STYLING
+    &:hover &_side-front{
+        transform: rotateY(-180deg);
+    }
+
+    &:hover &_side-back{
+        transform: rotateY(0deg);
+    }
+
+    &_pt{
+        background-size: cover;
+        height: 23rem;
+        background-blend-mode: screen;  //背景混合模式
+        clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
+        
+
+        &-1{
+            background-image: linear-gradient(to right bottom, 
+            $color-secondary-light, 
+            $color-secondary-dark),
+            url(../img/nat-5.jpg);
+        }
+    
+        &-2{
+            background-image: linear-gradient(to right bottom, 
+            $color-primry-green, $color-primry),
+            url(../img/nat-6.jpg);
+        }
+    
+        &-3{
+            background-image: linear-gradient(to right bottom, 
+            $color-tertiary-light, $color-tertiary-dark),
+            url(../img/nat-7.jpg);
+        }
+    }
+
+    &_heading{
+        font-size: 2.8rem;
+        font-weight: 300;
+        text-transform: uppercase;
+        text-align: right;
+        color: $color-whit;
+        position: absolute;
+        top: 12rem;
+        right: 2rem;
+        width: 60%;
+    }
+
+    &_heading-span{
+        padding: 1rem 1.5rem;
+        -webkit-box-decoration-break: clone;
+        box-decoration-break: clone;    //斷開的各個盒子樣式獨自渲染
+
+        &-1{
+            background-image: linear-gradient(to right bottom, 
+            $color-secondary-light, 
+            $color-secondary-dark);
+        }
+
+        &-2{
+            background-image: linear-gradient(to right bottom, 
+            $color-primry-green, 
+            $color-primry);
+        }
+    
+        &-3{
+            background-image: linear-gradient(to right bottom, 
+            $color-tertiary-light, 
+            $color-tertiary-dark);
+        }
+    }
+
+    &_details{
+        padding: 3rem;
+
+        ul{
+            list-style: none;   //列表樣式屬性: 沒有
+            //letter-spacing: 1px;
+            width: 80%;
+            margin: 0 auto;     //置中
+            
+            li{
+                font-size: 1.5rem;
+                text-align: center;
+                padding: 1rem;
+
+                &:not(:last-child){
+                    border-bottom: 1px solid $color-greay-light-2;
+                }
+            }
+        }
+    }
+
+    //BACK STYLING
+    &_cta{
+        @include center;
+        width: 90%;
+        text-align: center;
+        }
+        
+    &_price-box{
+        
+        color: $color-whit;
+        margin-bottom: 8rem;
+    }
+
+    &_price-only{
+        font-size: 1.4rem;
+        text-transform: uppercase;
+    }
+
+    &_price-value{
+        font-size: 6rem;
+        font-weight: 100;
+    }
+
+    //@include respond (tab-port){
+        //背面換到前面
+        @media only screen and (max-width: 56.25em),
+        only screen and (hover: none){
+        height: auto;
+        border-radius: 30px;
+        background-color: $color-whit;
+        box-shadow: 0 1.5rem 4rem rgb($color-black, 0.15);
+
+        &_side{
+            height: auto;
+            position: relative;
+            
+            &-back{
+                transform: rotateY(0);
+                clip-path: polygon(0 15%, 100% 0 ,100% 100%, 0 100%);
+                margin-top: -5rem;
+            }
+        }   
+
+        &:hover &_side-front{
+            transform: rotateY(0);
+        }
+
+        &_cta{
+            position: relative;
+            width: 100%;
+            top: 0;
+            left: 0;
+            transform: translate(0);
+            padding: 7rem 4rem 1rem 4rem;
+        }
+            
+        &_price-box{
+            margin-bottom: 0;
+        }
+    
+        &_price-value{
+            font-size: 4rem;
+        }
+    }
+}

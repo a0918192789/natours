@@ -1,0 +1,97 @@
+.popup{
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgb($color-greay-dark-3, 0.8);
+  z-index: 30;
+
+  opacity: 0;   //透明度
+  visibility: hidden;   //能見度:隱藏   
+  transition: all 0.3s;
+
+  //當瀏覽器支援時，即套用該屬性。  backdrop-filter: blur 模糊特效
+  @supports (-webkit-backdrop-filter: blur(10px)) or (backdrop-filter: blur(10px)){
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    background-color: rgb($color-black, 0.3);
+  }
+
+  &:target{   //選擇器把你設定指定元素的樣式
+    opacity: 1;
+    visibility: visible   //能見度:可見的
+  }
+
+  &:target &_content{
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+
+  &_close{
+
+    &:link,
+    &:visited{
+      position: absolute;
+      top: 2rem;
+      right: 4rem;
+      text-decoration: none;
+      font-size: 3rem;
+      display: inline-block;
+      transition: all 0.2s;
+      line-height: 1;
+    }
+      
+      &:hover{
+        color: $color-primry;
+        
+      }
+
+    
+  }
+
+  &_content{
+    @include center;
+    width: 75%;
+    background-color: $color-whit;
+    box-shadow: 0 2rem 4rem rgb($color-black, 0.2);
+    overflow: hidden;
+
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0);    //transform屬性只能有一個,所以include的寫transform在一起
+    transition: all 1s;
+  }
+
+  &_left{
+    width: 33.33%;
+    display: table-cell;    //表格
+  }
+
+  &_right{
+    width: 66.667%;
+
+    display: table-cell;    //表格
+    vertical-align: middle;   //垂直對齊方式:中間
+
+    padding: 3rem 5rem;
+    
+  }
+
+  &_img{
+    display: block;
+    width: 100%;
+    display: table-cell;
+  }
+
+  &_text{
+    font-size: 1.4rem;
+    margin-bottom: 4rem;
+    
+    column-count: 2;
+    column-gap: 4rem;   //間隙
+    column-rule: 1px solid $color-greay-light-2;    //佈局中列之間繪製的線條的寬度、樣式和顏色
+    text-align: justify;
+    hyphens: manual;    //連字符-
+    text-indent: 2rem;
+  }
+}

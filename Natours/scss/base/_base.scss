@@ -1,0 +1,53 @@
+*,      /* *通用選擇器*/
+*::after,   /* ::after 則是在原本的元素「之後」加入內容 */
+*::before{      /* ::before 是在原本的元素「之前」加入內容 */
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;    /* 從父元素繼承box-sizing 屬性的值 */
+}
+
+html{
+    font-size: 62.5%;   // 1rem = 10px; 10px / 16px = 62.5%
+
+    /*  這個媒體查詢詢問的問題, 如果寬度小於600,
+但是, 下一個媒體查詢會詢問寬度是否小於900｡
+假設寬度是500,那麼它仍然小於900,
+500仍然小於600, 但當然, 也小於900,
+所以這兩個媒體查詢都適用,
+刪除一個
+
+    @include respond (phone){
+        font-size: 50%;
+    }
+    */
+
+
+    @include respond (tab-land){    //width < 900 畫面內容縮小
+        font-size: 56.25%;     // 1rem = 9px; 9 / 16 = 56.25%
+    }
+
+    @include respond (tab-port){    //width < 600 畫面內容縮小
+        font-size: 50%;     // 1rem = 8px; 8 / 16 = 50%
+    }
+    
+    @include respond (big-desktop){
+        font-size: 75%;     // 1rem = 12px; 12 / 16 = 75%
+    }
+}
+
+body{
+    
+    box-sizing: border-box;     /* DIV 設定的寬度就已經包含內容寬度、內距與邊框寬度 */
+
+    padding: 3rem;
+
+    @include respond (tab-port){    
+        padding: 0;    
+    }
+}
+
+::selection{    //改變文字反選後的樣式
+    background-color: $color-primry;
+    color: $color-whit;
+}
+    

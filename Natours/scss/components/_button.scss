@@ -1,0 +1,107 @@
+.btn{
+    &,
+    &:link,  /* :link 還沒被訪問的樣式 */
+    &:visited{   /* :visited 被訪問過的樣式 */
+        text-transform: uppercase;
+        text-decoration: none;
+        letter-spacing: 1px;
+        padding: 1.5rem 4rem;
+        display: inline-block;
+        border-radius: 10rem;
+        
+        transition: all 0.2s;    
+        /* 此屬性可以隨著時間的推移從舊狀態平滑的過度到新狀態 */
+
+        position: relative;
+
+        //change for the <button> element
+        border: none;
+        cursor: pointer;
+    }
+
+    &:hover{  /* :hover 滑鼠滑過的樣式 */
+        transform: translateY(-0.3rem);
+        box-shadow: 0 1rem 2rem rgb($color-black, 0.2);
+        
+        &::after{
+            transform: scale(1.2);
+            opacity: 0;
+
+            animation-fill-mode: backwards;
+            /* 控制帶有動畫效果的物件在動畫結束之後的狀態 : 一樣會顯示最初的狀態 */
+        }
+    }
+
+    &:active{    // :active 滑鼠按下的樣式
+    
+        transform: translateY(-0.1rem);
+        box-shadow: 0 0.5rem 1rem rgb($color-black, 0.2);
+    }
+
+    &-white{
+        background-color: $color-whit;
+        color: $color-greay-dark;
+
+        animation: bottom 0.5s ease-out 0.6s;
+        /* 動畫持續時間､ 動畫播放的速度曲線和動畫延遲 */
+        
+        &::after{
+            background-color: $color-whit;
+        }
+    }
+
+    &-purple{
+        background-image: linear-gradient(to right bottom, 
+            $color-primry-purple, 
+            $color-primry-green);
+        color: $color-whit;
+
+        animation: bottom 0.5s ease-out 0.6s;
+        /* 動畫持續時間､ 動畫播放的速度曲線和動畫延遲 */
+        
+        &::after{
+            background-image: linear-gradient(to right bottom, 
+            $color-primry-purple, 
+            $color-primry-green);
+        }
+    }
+
+    &::after{
+        content: "";
+        display: inline-block;
+        width: 100%;
+        height: 100%;
+        border-radius: 10rem;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        transition: all 0.4s; 
+    }
+
+}
+
+.btn-text{
+    &:link,
+    &:visited{
+        font-size: $default-font-size;
+        color: $color-primry;
+        display: inline-block;
+        text-decoration: none;
+        border-bottom: 1px solid $color-primry;
+        padding: 3px;
+        transition: all 0.2s;
+    }
+
+    &:hover{
+        background-color: $color-primry;
+        color: $color-whit;
+        box-shadow: 0 1rem 2rem rgb($color-black, 0.2);
+        transform: translateY(-2px);
+    }
+
+    &:active{
+        box-shadow: 0 1rem 1rem rgb($color-black, 0.2);
+        transform: translateY(0);
+    }
+}

@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900" rel="stylesheet">
+
+        
+        <link rel="stylesheet" href="icon-font.css">
+        <link rel="stylesheet" href="SCSS/natours.css">
+        <link rel="shortcut icon" type="image/png" href="img/favicon.png">
+        <script src="jquery-3.5.1.js"></script>
+        <title>Natours | Exciting tours for adventurous people</title>
+    </head>
+
+    <body>
+        <!-- 第一頁圓圓的導覽 -->
+        <div class="navigation">
+            <input type="checkbox" class="navigation_checkbox" id="navi-toggle">
+
+            <label for="navi-toggle" class="navigation_button">
+                <span class="navigation_icon">&nbsp;</span>
+            </label>    <!--label: 表單欄位標題-->
+
+            <div class="navigation_background">&nbsp;</div>
+                
+            <nav class="navigation_nav">
+                <ul class="navigation_list">
+                    <li class="navigation_item"><a href="#" class="navigation_link"><span>01</span>About Natous</a></li>
+                    <li class="navigation_item"><a href="#" class="navigation_link"><span>02</span>Your benfits</a></li>
+                    <li class="navigation_item"><a href="#" class="navigation_link"><span>03</span>Popular tours</a></li>
+                    <li class="navigation_item"><a href="#" class="navigation_link"><span>04</span>Stories</a></li>
+                    <li class="navigation_item"><a href="#" class="navigation_link"><span>05</span>Book now</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <!-- 第一頁 OUTDOORS-->
+        <header class="header">
+            <div class="header__logo-box">
+                <img src="img/logo-white.png" alt="logo" class="header__logo">
+            </div>
+
+            <div class="header__titlebox">
+                <h1 class="header-title">
+                    <span class="header-title1">Outdoors</span>
+                    <span class="header-title2">is where life happens</span>
+                </h1>
+
+                <a href="#" class="btn btn-white "> Discover our tours</a>
+             </div>
+        </header>
+        
+        <main>
+            <!-- 第二頁 EXCITING TOURS FOR ADVENTUROUS PEOPLE-->
+            <section class="section-about">
+                <div class="u-center-text u-margin-bottom-big">
+                    <h2 class="heading-secondary">
+                        Exciting tours for adventurous people
+                    </h2>
+                </div>
+
+                <div class="row">
+                    <div class="col-1-of-2">
+                        <h3 class="heading-tertiary u-margin-bottom-small">
+                            You're going to fall in love with nature
+                        </h3>
+                        <p class="paragraph">
+                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quia unde sapiente pariatur deleniti tenetur neque accusantium eveniet quam voluptas obcaecati totam, voluptatibus dicta ab dignissimos, doloremque deserunt exercitationem quis fuga?
+                        </p>
+
+                        <h3 class="heading-tertiary u-margin-bottom-small">
+                            Live adventures like you never have before                        </h3>
+                        <p class="paragraph">
+                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quia unde sapiente pariatur deleniti tenetur neque accusantium eveniet quam voluptas obcaecati totam, voluptatibus dicta ab dignissimos, doloremque deserunt exercitationem quis fuga?
+                        </p>
+
+                        <a href="#" class="btn-text">Learn more &rarr;</a>
+                    </div>
+    
+                    <div class="col-1-of-2">
+                        <div class="composition">
+                            <img srcset="img/nat-1-large.jpg 300w, img/nat-1-large.jpg 1000w"   
+                            sizes="(max-width: 65.25em) 20vw, (max-width: 37.5em) 30vw, 300px"
+                            alt="Photo 1"
+                            class="composition_photo composition_photo--p1"
+                            src="img/nat-1-large.jpg">
+                            <!-- 
+                                一張圖片兩個版本寬度300, 1000
+                                使用size屬性為不同的斷點指定以視口寬度為單位的近似視圖  圖片170/900=20%
+                            -->
+
+                            <img srcset="img/nat-2-large.jpg 300w, img/nat-2-large.jpg 1000w"   
+                            sizes="(max-width: 65.25em) 20vw, (max-width: 37.5em) 30vw, 300px"
+                            alt="Photo 2"
+                            class="composition_photo composition_photo--p2"
+                            src="img/nat-2-large.jpg">
+
+                            <img srcset="img/nat-3-large.jpg 300w, img/nat-3-large.jpg 1000w"   
+                            sizes="(max-width: 65.25em) 20vw, (max-width: 37.5em) 30vw, 300px"
+                            alt="Photo 3"
+                            class="composition_photo composition_photo--p3"
+                            src="img/nat-3-large.jpg">
+                        </div>
+
+                        <!--  
+                        
+                            <img src="img/nat-1-large.jpg" alt="photo1" class="composition_photo composition_photo--p1">
+                            <img src="img/nat-2-large.jpg" alt="photo2" class="composition_photo composition_photo--p2">
+                            <img src="img/nat-3-large.jpg" alt="photo3" class="composition_photo composition_photo--p3">  
+                        </div>
+                        -->
+                </div>
+            </section>
+
+            <!-- 第三頁 4張card-->
+            <section class="section-features">
+                <div class="row">
+                    <div class="col-1-of-4">
+                        <div class="feature-box">
+                            <i class="feature-box_icon icon-basic-world"></i>
+                            <h3 class="heading-tertiary">
+                                Explore the world
+                            </h3>
+                            <p class="feature-box_text">
+                                Quia unde sapiente pariatur deleniti tenetur neque
+                            </p>
+                        </div>    
+                    </div>
+
+                    <div class="col-1-of-4">
+                        <div class="feature-box">
+                            <i class="feature-box_icon icon-basic-compass"></i>
+                            <h3 class="heading-tertiary">
+                                Meet nature
+                            </h3>
+                            <p class="feature-box_text">
+                                Quia unde sapiente pariatur deleniti tenetur neque
+                            </p>
+                        </div>    
+                    </div>
+
+                    <div class="col-1-of-4">
+                        <div class="feature-box">
+                            <i class="feature-box_icon icon-basic-map"></i>
+                            <h3 class="heading-tertiary">
+                                Find your way
+                            </h3>
+                            <p class="feature-box_text">
+                                Quia unde sapiente pariatur deleniti tenetur neque
+                            </p>
+                        </div>    
+                    </div>
+
+                    <div class="col-1-of-4">
+                        <div class="feature-box">
+                            <i class="feature-box_icon icon-basic-heart"></i>
+                            <h3 class="heading-tertiary">
+                                Live a healthier life
+                            </h3>
+                            <p class="feature-box_text">
+                                Quia unde sapiente pariatur deleniti tenetur neque
+                            </p>
+                        </div>    
+                    </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 第四頁 3張card-->
+            <section class="section-tours" id="section-tours">
+                <div class="u-center-text u-margin-bottom-big">
+                    <h2 class="heading-secondary">
+                        Most popular tours
+                    </h2>
+                </div>
+
+                <div class="row">
+                    <div class="col-1-of-3">
+                        <div class="card">
+                            <div class="card_side card_side-front">
+                                <div class="card_pt card_pt-1">
+                                    &nbsp;  <!--空格-->
+                                </div>
+
+                                <h4 class="card_heading">
+                                    <span class="card_heading-span card_heading-span-1">The sea explorer</span>
+                                </h4>
+
+                                <div class="card_details">
+                                    <ul>
+                                        <li>3 day tours</li>
+                                        <li>Up to 30 people</li>
+                                        <li>2 tour guides</li>
+                                        <li>Sleep in cozy hotels</li>
+                                        <li>Difficulty: easy</li>
+                                    </ul>
+                                </div>                            
+                            </div>
+
+                            <div class="card_side card_side-back card_side-back-1">
+                                <div class="card_cta">
+                                    <div class="card_price-box">
+                                        <p class="card_price-only">Only</p>
+                                        <p class="card_price-value">$297</p>
+                                    </div>
+
+                                    <a href="#popup" class="btn btn-white">Book now!</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="col-1-of-3">
+                        <div class="card">
+                            <div class="card_side card_side-front">
+                                <div class="card_pt card_pt-2">
+                                    &nbsp;  <!--空格-->
+                                </div>
+
+                                <h4 class="card_heading">
+                                    <span class="card_heading-span card_heading-span-2">The Forest Hiker</span>
+                                </h4>
+
+                                <div class="card_details">
+                                    <ul>
+                                        <li>7 day tours</li>
+                                        <li>Up to 40 people</li>
+                                        <li>6 tour guides</li>
+                                        <li>Sleep in provided tents</li>
+                                        <li>Difficulty: medium</li>
+                                    </ul>
+                                </div>                            
+                            </div>
+
+                            <div class="card_side card_side-back card_side-back-2">
+                                <div class="card_cta">
+                                    <div class="card_price-box">
+                                        <p class="card_price-only">Only</p>
+                                        <p class="card_price-value">$497</p>
+                                    </div>
+
+                                    <a href="#popup" class="btn btn-white">Book now!</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="col-1-of-3">
+                        <div class="card">
+                            <div class="card_side card_side-front">
+                                <div class="card_pt card_pt-3">
+                                    &nbsp;  <!--空格-->
+                                </div>
+
+                                <h4 class="card_heading">
+                                    <span class="card_heading-span card_heading-span-3">The Snow Adventurer</span>
+                                </h4>
+
+                                <div class="card_details">
+                                    <ul>
+                                        <li>5 day tours</li>
+                                        <li>Up to 15 people</li>
+                                        <li>3 tour guides</li>
+                                        <li>Sleep in provided tents</li>
+                                        <li>Difficulty: hard</li>
+                                    </ul>
+                                </div>                            
+                            </div>
+
+                            <div class="card_side card_side-back card_side-back-3">
+                                <div class="card_cta">
+                                    <div class="card_price-box">
+                                        <p class="card_price-only">Only</p>
+                                        <p class="card_price-value">$897</p>
+                                    </div>
+
+                                    <a href="#popup" class="btn btn-white">Book now!</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="u-center-text u-margin-top-huge">
+                    <a href="#" class="btn btn-purple">Discover all tours</a>
+                </div>
+            </section>
+
+            <!-- 第五頁 WE MAKE PEOPLE GENUINELY HAPPY -->
+            <section class="section-stories">
+                <div class="bg-video">
+                    <video class="bg-video_content" autoplay muted loop>
+                        <source src="img/video.mp4" type="video/mp4">
+                        <source src="img/video.webm" type="video/webm">
+                        Your browser is not supported!
+                    </video>
+                </div>
+
+                <div class="u-center-text u-margin-bottom-big">
+                    <h2 class="heading-secondary">
+                        We make people genuinely happy
+                    </h2>
+                </div>
+
+                <div class="row">
+                    <div class="story">
+                        <figure class="story_shape">    <!--引用任何內容像是文字段落、圖片獨立的區塊-->
+                            <img src="img/nat-8.jpg" class="story_img" alt="Person on a tour">
+                            <figcaption class="story_caption">Mary Smith</figcaption>   <!-- figcaption標籤用來說明該 figure 區塊的標題-->
+                        </figure>
+
+                        <div class="story_text">
+                            <h3 class="heading-tertiary u-margin-bottom-small">I had the best week ever with my family</h3>
+                            <p>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam, ipsum sapiente aspernatur libero repellat quis consequatur
+                                ducimus quam nisi exercitationem omnis earum qui. Aperiam, ipsum sapiente aspernatur libero
+                                repellat quis consequatur ducimus quam nisi exercitationem omnis earum qui.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="story">
+                        <figure class="story_shape">    <!--引用任何內容像是文字段落、圖片獨立的區塊-->
+                            <img src="img/nat-9.jpg" class="story_img" alt="Person on a tour">
+                            <figcaption class="story_caption">Jack wilson</figcaption>   <!-- figcaption標籤用來說明該 figure 區塊的標題-->
+                        </figure>
+
+                        <div class="story_text">
+                            <h3 class="heading-tertiary u-margin-bottom-small">WOW! My life is completely different now</h3>
+                            <p>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam, ipsum sapiente aspernatur libero repellat quis consequatur
+                                ducimus quam nisi exercitationem omnis earum qui. Aperiam, ipsum sapiente aspernatur libero
+                                repellat quis consequatur ducimus quam nisi exercitationem omnis earum qui.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="u-center-text u-margin-top-huge">
+                        <a href="#" class="btn-text">Read all stories &rarr;</a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 第六頁 STAR BOOKING NOW -->
+            <section class="section-book">
+                <div class="row">
+                    <div class="book">
+                        <div class="book_form">
+                            <form action="#" class="form">
+                                <div class="u-margin-bottom-medium">
+                                    <h2 class="heading-secondary">
+                                        star booking now
+                                    </h2>
+                                </div>
+
+                                <div class="form_group ">
+                                    <input type="text" class="form_input" placeholder="Full name" id="name" required>
+                                    <label for="name" class="form_label">Full name</label>  <!--將for 的屬性值設定為某表單元件的 id 值，藉此來建立關聯-->
+                                </div>
+
+                                <div class="form_group">
+                                    <input type="email" class="form_input" placeholder="Email address" id="email" required>
+                                    <label for="email" class="form_label">Email address</label>  <!--將for 的屬性值設定為某表單元件的 id 值，藉此來建立關聯-->
+                                </div>
+                                
+                                <div class="form_group ">
+                                    <div class="form_radio-group u-margin-bottom-medium">
+                                        <input type="radio" class="form_radio-input" id="small" name="size">    <!--需要有相同的name屬性｡現在可以選擇其中的任何一個, 因為所有同名的輸入, 只能選擇其中的一個｡-->
+                                        <label for="small" class="form_radio-label">
+                                            <span class="form_radio-button"></span>
+                                            Small tour group
+                                        </label>
+                                    </div>
+
+                                    <div class="form_radio-group">
+                                        <input type="radio" class="form_radio-input" id="large" name="size">    <!--需要有相同的name屬性｡現在可以選擇其中的任何一個, 因為所有同名的輸入, 只能選擇其中的一個｡-->
+                                        <label for="large" class="form_radio-label">
+                                            <span class="form_radio-button"></span>
+                                            Large tour group
+                                        </label>
+                                    </div>
+
+                                    <div class="form_group">
+                                        <button class="btn btn-purple">Next step &rarr;</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- 結尾 -->
+        <footer class="footer">
+            <div class="footer_logo-box">
+
+                <picture class="footer_logo">
+                    <source srcset="img/logo-green-small-1x.png 1x, img/logo-green-small-2x.png 2x" 
+                    media="(max-width: 37.5em)">
+                    <!-- <picture> 標籤可以讓不同的瀏覽器窗口大小定義不同的圖像。
+                    <picture> 標籤內包含兩種標籤：一個或多個 <source>標籤 和 一個<img>標籤。
+                    而 <source>標籤可以指定視頻/音頻/圖像文件，裡面可以放srcset(必填)、media、type等元素 -->
+
+                    <img srcset="img/logo-green-1x.png 1x, img/logo-green-2x.png 2x" alt="Full logo" class="footer_logo">
+                    <!-- img srcset 可以根據螢幕的 pixel density 或是圖片在螢幕上的實際寬度，決定要載入哪張圖片。 -->
+                </picture>
+            </div>
+
+            <div class="row">
+                <div class="col-1-of-2">
+                    <div class="footer_navigation">
+                        <ul class="footer_list">
+                            <li class="footer_item"><a href="#" class="footer_link">Company</a></li>
+                            <li class="footer_item"><a href="#" class="footer_link">Contact us</a></li>
+                            <li class="footer_item"><a href="#" class="footer_link">Carrers</a></li>
+                            <li class="footer_item"><a href="#" class="footer_link">Privacy policy</a></li>
+                            <li class="footer_item"><a href="#" class="footer_link">Terms</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-1-of-2">
+                    <p class="footer_copyright">
+                        Built by <a href="#" class="footer_link">Jonas Schmedtmann</a> for his online course <a href="#" class="footer_link">Advanced CSS and Sass</a>.
+                        Copyright &copy; by Jonas Schmedtmann. You are 100% allowed to use this webpage for both personal
+                        and commercial use, but NOT to claim it as your own design. A credit to the original author, Jonas
+                        Schmedtmann, is of course highly appreciated!
+                    </p>
+                </div>
+            </div>
+        </footer>
+
+        <!-- 第四頁 BOOK NOW -->
+        <div class="popup" id="popup">
+            <div class="popup_content">
+                <div class="popup_left">
+                    <img src="img/nat-8.jpg" alt="Tour photo" class="popup_img">
+                    <img src="img/nat-9.jpg" alt="Tour photo" class="popup_img">
+                </div>
+
+                <div class="popup_right">
+                    <a href="#section-tours" class="popup_close">&times;</a>     <!--X-->
+                    <h2 class="heading-secondary u-margin-bottom-small">Start booking now</h2>
+                    <h3 class="heading-tertiary u-margin-bottom-small">Important &ndash; Please read these terms before booking</h3>
+                    <p class="popup_text u-margin-bottom-medium">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                        Sed sed risus pretium quam. Aliquam sem et tortor consequat id. Volutpat odio facilisis mauris sit
+                        amet massa vitae. Mi bibendum neque egestas congue. Placerat orci nulla pellentesque dignissim enim
+                        sit. Vitae semper quis lectus nulla at volutpat diam ut venenatis. Malesuada pellentesque elit eget
+                        gravida cum sociis natoque penatibus et. Proin fermentum leo vel orci porta non pulvinar neque laoreet.
+                        Gravida neque convallis a cras semper. Molestie at elementum eu facilisis sed odio morbi quis. Faucibus
+                        vitae aliquet nec ullamcorper sit amet risus nullam eget.
+                    </p>
+
+                    <a href="#" class="btn btn-purple">Book now</a>
+                </div>
+            </div>
+        </div>
+
+        <!--
+        <section class="gird-text">
+            <div class="row">
+                <div class="col-1-of-2">
+                    col 1 of 2
+                </div>
+
+                <div class="col-1-of-2">
+                    col 1 of 2
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-1-of-3">
+                    col 1 of 3
+                </div>
+
+                <div class="col-1-of-3">
+                    col 1 of 3
+                </div>
+
+                <div class="col-1-of-3">
+                    col 1 of 3
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-1-of-3">
+                    col 1 of 3
+                </div>
+
+                <div class="col-2-of-3">
+                    col 2 of 3
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-1-of-4">
+                    col 1 of 4
+                </div>
+
+                <div class="col-1-of-4">
+                    col 1 of 4
+                </div>
+
+                <div class="col-1-of-4">
+                    col 1 of 4
+                </div>
+
+                <div class="col-1-of-4">
+                    col 1 of 4
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-1-of-4">
+                    col 1 of 4
+                </div>
+
+                <div class="col-1-of-4">
+                    col 1 of 4
+                </div>
+
+                <div class="col-2-of-4">
+                    col 2 of 4
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-1-of-4">
+                    col 1 of 4
+                </div>
+
+                <div class="col-3-of-4">
+                    col 3 of 4
+                </div>
+
+            </div>
+        </section>
+        -->
+    </body>
+</html>

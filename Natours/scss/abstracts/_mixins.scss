@@ -1,0 +1,67 @@
+@mixin clearfix{    //清除容器中的浮動內容
+    &::after{
+        content: "";
+        display: table;     //添加「區塊」屬性
+        clear: both;    //帶有清除浮動的屬性
+    }
+}
+
+@mixin center{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+// MEDIA QUERY MANAGER
+/*
+0 - 600px:      Phone
+600 - 900px:    Tablet portrait
+900 - 1200px:   Tablet landscape
+[1200 - 1800] is where our normal styles apply
+1800px + :      Big desktop
+
+
+$breakpoint arguement choices:
+- phone
+- tab-port  //tablet portrait平板縱向
+- tab-land  //平板橫向
+- big-desktop
+*/
+
+/* 
+將_base檔字體大小50%解析到混合中呢？
+有一種東西叫做內容指令 @content
+這基本上允許我們將一個代碼塊解析成一個混合｡
+ */
+
+/* 
+不會在這裡的媒體查詢中使用像素｡
+因為,如果用戶更改瀏覽器中的默認字體大小, 則媒體查詢不會受到影響｡
+然而, 我們希望它們受到影響 
+
+em是媒體查詢的最佳選擇
+
+ORDER: Base + typography > general layout + grid > page layout > components
+1em = 16px
+*/
+
+@mixin respond ($breakpoint){   
+//斷點，Bootstrap 中的觸發器，用於控制排版如何在不同的設備或視區大小進行響應式的變化。
+
+    @if $breakpoint == phone{
+        @media only screen and (max-width: 37.5em) {@content};   //600px 除 16px =37.5em
+    }
+
+    @if $breakpoint == tab-port{
+        @media only screen and (max-width: 56.25em) {@content};   //900px
+    }
+
+    @if $breakpoint == tab-land{
+        @media only screen and (max-width: 75em) {@content};    //1200px
+    }
+
+    @if $breakpoint == big-desktop{
+        @media only screen and (min-width: 112.5em) {@content};  //最小寬度的媒體查詢  1800px
+    }
+}

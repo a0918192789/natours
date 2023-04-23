@@ -1,0 +1,49 @@
+.header{
+    height: 95vh;
+    background-image: linear-gradient(    
+    to right bottom, 
+    rgb($color-primry-purple, 0.803),    /* to 目標方向, 起始色彩, 結束色彩 */
+    rgb($color-primry-green, 0.803)),  
+    url(../img/mountain.jpg);
+        
+    background-size: cover;
+    background-position: top;
+    position: relative;
+
+    //@support標記來檢測該瀏覽器是否有支援
+    //當瀏覽器支援時，即套用該屬性。
+    @supports (clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0 0)){
+        -webkit-clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
+        clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);  /* 圖片裁切: 多邊形 */
+        height: 95vh;
+    }
+
+    //只要分辨率高於每英寸192點,就會應用此處的代碼｡
+    @media only screen and (min-resolution: 192dpi) and (min-width: 37.5em),    //600 / 16 = 37.5
+            only screen and (-webkit-min-device-pixel-ratio: 2) and (min-width: 37.5em),    //safari網頁無法運作,加上此行代碼讓safari運作
+            only screen and (min-width: 125em){    
+        background-image: linear-gradient(
+        to right bottom, 
+        rgb($color-primry-purple, 0.803),    /* to 目標方向, 起始色彩, 結束色彩 */
+        rgb($color-primry-green, 0.803)),  
+        url(../img/hero.jpg);
+    }
+
+    &__logo-box{
+        position: absolute;
+        left: 4rem;
+        top: 4rem;
+    }
+    
+    &__logo{
+        height: 4rem;
+    }
+    
+    &__titlebox{
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);   /* 同時聲明Ｘ軸、Ｙ軸的平移數值 */
+        text-align: center;
+    }
+}
